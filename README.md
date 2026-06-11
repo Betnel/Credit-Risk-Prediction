@@ -256,9 +256,9 @@ along with the estimated probability of default.
 -Plotly
 
 ### Machine Learning
--XGBoost
 -Logistic Regression
 -Random Forest
+-Gradient Forest
 ### Model Serialization
 
 - Joblib
@@ -274,14 +274,11 @@ along with the estimated probability of default.
 ```text
 Credit-Risk-Prediction/
 │
-├── app.py
-├── credit_risk_model.pkl
-├── model_columns.pkl
-├── requirements.txt
-├── README.md
-│
-└── notebooks/
-    └── credit_risk_prediction.ipynb
+├── app.py                  # Streamlit app
+├── credit_risk_model.pkl   # Trained model
+├── model_columns.pkl       # Feature columns used in training
+├── requirements.txt        # Dependencies
+├── README.md               # Project documentation
 ```
 
 ---
