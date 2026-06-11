@@ -40,7 +40,7 @@ The main objectives of this project were:
 ----
 ### Launch Live Demo
 
-
+-https://credit-risk-prediction-lftkmuzsjrak3t96mygoey.streamlit.app/
 ---
 
 ## Dataset Description
