@@ -244,21 +244,21 @@ along with the estimated probability of default.
 
 ---
 
-## Technology Stack
+## Technology Used
 
 ### Programming Language
 
 - Python
 
 ### Data Analysis
-
-- Pandas
-- NumPy
+-Matplotlib
+-Seaborn
+-Plotly
 
 ### Machine Learning
-
-- Scikit-learn
-
+-XGBoost
+-Logistic Regression
+-Random Forest
 ### Model Serialization
 
 - Joblib
