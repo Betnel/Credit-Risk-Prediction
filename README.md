@@ -1,84 +1,215 @@
-# 💳 Credit Risk Prediction Application
+Credit Risk Prediction & Analysis
 
-Predict loan default risk using Machine Learning and an interactive Streamlit application.
+An end-to-end Machine Learning solution designed to predict loan default risks using financial and demographic customer data.
+Project Overview
 
-## 🚀 Live Demo
-[Launch App](https://your-app-name.streamlit.app)
+This project addresses the critical challenge of credit risk assessment in the financial sector. Using a dataset of over 250,000 records, I developed a robust predictive model that identifies potential loan defaulters with high precision.
 
-## 📋 Project Summary
-This project predicts whether a borrower is likely to default on a loan using demographic, financial, and credit-related information.
+The project transitions from a comprehensive exploratory analysis in a Jupyter Notebook to a production-ready interactive application deployed using Streamlit.
 
-### Business Problem
-Financial institutions need to identify high-risk borrowers before loan approval to reduce default losses and improve lending decisions.
+The solution enables financial institutions to automate risk assessment, improve lending decisions, and reduce exposure to high-risk borrowers.
+Live Demo
 
-### Solution
-A machine learning classification model was developed and deployed using Streamlit to provide real-time risk predictions.
+🔗 Access the Credit Risk Predictor App
 
----
+https://credit-risk-prediction-jffbjcq2ddxayyumemx86l.streamlit.app/
+Technologies Used
+Programming & Data Science
 
-## 🔄  Methodology Used
+    Python
+    Pandas
+    NumPy
+    Scikit-Learn
 
-### 1. Business Understanding
-- Define the loan default prediction problem
-- Identify business objectives
-- Establish success criteria
+Machine Learning
 
-### 2. Data Understanding
-- Explore borrower characteristics
-- Analyze default patterns
-- Identify key risk factors
+    XGBoost
+    Logistic Regression
+    Random Forest
 
-### 3. Data Preparation
-- Data cleaning
-- Feature engineering
-- One-hot encoding
-- Feature alignment
+Data Visualization
 
-### 4. Modeling
-- Train classification model
-- Evaluate performance
-- Save model artifacts
+    Matplotlib
+    Seaborn
+    Plotly
 
-### 5. Evaluation
-| Metric | Score |
-|---------|---------|
-| Accuracy | XX% |
-| Precision | XX% |
-| Recall | XX% |
-| F1 Score | XX% |
-| ROC-AUC | XX% |
+Deployment & Version Control
 
-### 6. Deployment
-- Streamlit web application
-- Real-time predictions
-- Probability scoring
+    Streamlit
+    GitHub
 
----
+Technical Workflow
+1. Data Understanding & Engineering
+Data Cleaning
 
-## 📊 Features
+    Removed non-informative columns such as LoanID
+    Handled missing values and inconsistencies
 
-- Predict default risk
-- Estimate probability of default
-- Interactive user interface
-- Real-time model inference
+Feature Engineering
 
----
+    Converted binary categories:
+        HasMortgage
+        HasDependents
+        HasCoSigner
 
-## 🖥️ Application Screenshot
+into numerical representations.
 
-![Dashboard](images/dashboard.png)
+    Applied feature preprocessing for categorical and numerical variables.
 
----
+Exploratory Data Analysis (EDA)
 
-## 🏗️ Project Structure
+Performed extensive analysis to understand:
 
-```text
-credit-risk-prediction/
+    Loan default behavior
+    Correlations between variables
+    Risk-driving financial indicators
+    Customer demographic trends
+
+Visualizations were created to identify:
+
+    Income distributions
+    Credit score patterns
+    Interest rate impacts
+    Loan amount relationships
+
+Model Development
+
+Multiple machine learning models were tested and evaluated.
+Models Implemented
+Logistic Regression
+
+Used as the baseline classification model.
+Random Forest
+
+Implemented to capture non-linear feature interactions.
+XGBoost (Final Selected Model)
+
+Chosen due to superior predictive performance and robustness on imbalanced data.
+
+Key optimization techniques:
+
+    Hyperparameter tuning
+    scale_pos_weight handling
+    Feature preprocessing
+    Threshold tuning
+
+Model Evaluation Metrics
+
+The project focused on metrics that are highly important in credit risk systems:
+
+    Recall
+    Precision
+    F1 Score
+    accuracy score
+    confusion matrix
+
+Special emphasis was placed on Recall to minimize false negatives and ensure high-risk borrowers are properly identified.
+Streamlit Application
+
+An interactive web application was developed using Streamlit to make the model accessible to end users.
+App Features
+Single Customer Prediction
+
+Predict whether an individual customer is likely to default.
+Batch CSV Prediction
+
+Upload a CSV file containing multiple customers for bulk risk analysis.
+Default Probability Scoring
+
+Displays the probability of default for each applicant.
+Interactive Dashboard
+
+Provides analytics and visual insights into the dataset.
+Download Predictions
+
+Users can export prediction results as CSV files.
+Responsive User Interface
+
+Clean dashboard layout suitable for business presentations and demonstrations.
+Business Insights
+
+The analysis revealed several important drivers of loan default risk.
+Major Risk Indicators
+
+    Lower credit scores significantly increase default probability.
+    High interest rates correlate strongly with loan defaults.
+    Lower income levels increase financial vulnerability.
+    Employment instability is a strong predictor of repayment challenges.
+    Higher loan amounts increase lending exposure.
+
+Strategic Business Value
+
+This system can help financial institutions:
+
+    Automate initial loan screening
+    Reduce manual risk assessment workload
+    Improve decision consistency
+    Minimize credit losses
+    Accelerate loan approval workflows
+    Support data-driven lending strategies
+
+Project Structure
+
+ML PROJECTS/
 │
-├── app.py
-├── credit_risk_prediction.ipynb
-├── credit_risk_model.pkl
-├── model_columns.pkl
-├── Loan_default.csv
-├── requirements.txt
-└── README.md
+├── credit_risk_prediction.ipynb   # Research, EDA, and model experimentation
+├── Loan_default.csv               # Dataset
+├── train_model.py                 # Model training pipeline
+├── app.py                         # Streamlit application
+├── model.pkl                      # Trained machine learning model
+├── preprocessor.pkl               # Saved preprocessing pipeline
+├── requirements.txt               # Python dependencies
+└── README.md                      # Project documentation
+
+Local Setup
+1. Clone the Repository
+
+git clone https://github.com/BrentOchieng/Credit-Risk-Prediction.git
+
+2. Navigate Into the Project
+
+cd Credit-Risk-Prediction
+
+3. Install Dependencies
+
+pip install -r requirements.txt
+
+4. Train the Model
+
+python train_model.py
+
+This generates:
+
+model.pkl
+preprocessor.pkl
+
+5. Run the Streamlit App
+
+streamlit run app.py
+
+6. Open in Browser
+
+http://localhost:8501
+
+Deployment
+
+The application can be deployed using:
+
+    Streamlit Community Cloud
+    Render
+    Railway
+    AWS
+    Azure
+
+Future Improvements
+
+Potential future enhancements include:
+
+    SHAP explainability integration
+    User authentication system
+    Real-time database integration
+    Cloud API deployment
+    Automated model retraining
+    Advanced monitoring dashboards
+
+
